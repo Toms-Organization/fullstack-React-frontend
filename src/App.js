@@ -2,14 +2,16 @@ import './index.css';
 
 import './App.css';
 import NavBar from './components/NavBar';
+import Login from './components/Login';
+import Profile from './components/Profile';
 
 function App() {
   return (
     <div>
-  <NavBar/>
-   <h1 className="font-plaintext" >
-   just a simple h1
-    </h1></div>
+      <NavBar />
+      <Profile />
+      <Login />
+    </div>
   );
 }
 

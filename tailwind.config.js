@@ -5,7 +5,8 @@ module.exports = {
     extend: {},
     fontFamily: {
       signature: ["Great Vibes"],
-      plaintext: ["Prosto One"],
+      plainheader: ["Prosto One"],
+      plaintext: ["Inter"],
    
     }
   },

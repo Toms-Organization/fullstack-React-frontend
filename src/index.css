@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,600;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prosto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,6 +12,7 @@
     font-family: 'Great Vibes', cursive;
     font-family: 'Raleway', sans-serif;
     font-family: 'Prosto One', cursive;
+    font-family: 'Inter', sans-serif;
     
   }
 }
