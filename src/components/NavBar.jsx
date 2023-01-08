@@ -22,6 +22,10 @@ const NavBar = () => {
         News
       </Link>
 
+      <Link to="/Blog" className="BlogPage">
+        Blog
+      </Link>
+
       <Link to="/Login" className="LoginPage">
         Login/Logout
       </Link>
