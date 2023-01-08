@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { login, logout } from '../features/user';
 import { useSelector } from 'react-redux';
+import TestForm from './TestForm';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -9,29 +10,23 @@ const LoginPage = () => {
 
   return (
     <div>
+      <h1 className="flex justify-between items-center text-2xl">
+        This is LoginPage
+      </h1>
+
       <div>
-        <h1>Login Page</h1>
-        <p>Name: {user.name}</p>
-        <p>Age: {user.age}</p>
-        <p>Email: {user.email}</p>
+        <TestForm></TestForm>
       </div>
 
-      <br />
-      <button
-        onClick={() =>
-          dispatch(
-            login({
-              name: 'Tom',
-              age: 30,
-              email: 'tomsmail@gmail.com',
-            })
-          )
-        }
-      >
-        LOGIN
-      </button>
-      <br />
-      <button onClick={() => dispatch(logout())}>LOGOUT</button>
+      <div>
+        <br />
+        <br />
+        <br />
+        <h1>Current Logged in is:</h1>
+        <p>Name: {user.name}</p>
+        <p>reason: {user.reason}</p>
+        <p>Email: {user.email}</p>
+      </div>
     </div>
   );
 };
