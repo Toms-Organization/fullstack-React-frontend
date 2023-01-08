@@ -17,8 +17,8 @@ const TestForm = () => {
   const user = useSelector((state) => state.user.value);
   const handleLogout = (event) => {
     event.preventDefault();
+    alert('Goodbye ' + user.name);
     dispatch(logout());
-    alert('Goodbye ' + inputs.name);
   };
 
   const handleSubmit = (event) => {
