@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { act } from 'react-dom/test-utils';
 
-const initialState = { name: '', age: 0, email: '' };
+const initialState = { name: '', reason: '', email: '' };
 
 export const userSlice = createSlice({
   name: 'user',
