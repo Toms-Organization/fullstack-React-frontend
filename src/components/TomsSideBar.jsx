@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SideBar = () => {
+const TomsSideBar = () => {
   const links = [
     {
       id: 1,
@@ -22,15 +22,15 @@ const SideBar = () => {
 
   return (
     <div>
-      <SideBar>
-        <ul className="display:inline">
+      <div>
+        <ul>
           {links.map(({ id, link }) => (
             <li key={id}>{link}</li>
           ))}
         </ul>
-      </SideBar>
+      </div>
     </div>
   );
 };
 
-export default SideBar;
+export default TomsSideBar;

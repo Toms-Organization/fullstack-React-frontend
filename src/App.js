@@ -2,17 +2,16 @@ import './index.css';
 
 import './App.css';
 import NavBar from './components/NavBar';
-import Login from './components/Login';
-import Profile from './components/Profile';
 import HomePage from './components/HomePage';
+import TomsSideBar from './components/TomsSideBar';
 
 function App() {
-  const test = { name: 'Tom', age: 30 };
+  // const test = { name: 'Tom', age: 30 };
 
   return (
     <div>
       <NavBar />
-      <HomePage />
+      <section></section>
     </div>
   );
 }
@@ -20,4 +19,7 @@ function App() {
 export default App;
 
 //<Login />
-// <Profile />;
+// <Profile />
+// <TomsSideBar className="justify-start" />;
+// <HomePage className="justify-start" />
+// <testComponent1></testComponent1>
