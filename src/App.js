@@ -1,17 +1,25 @@
 import './index.css';
-
 import './App.css';
+
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
-import TomsSideBar from './components/TomsSideBar';
+import Profile from './components/Profile';
+import LoginPage from './components/LoginPage';
+
+import { Route, Routes } from 'react-router-dom';
+import AboutPage from './components/AboutPage';
 
 function App() {
-  // const test = { name: 'Tom', age: 30 };
-
   return (
     <div>
       <NavBar />
-      <section></section>
+      <div>
+        <Routes>
+          <Route path="/Home" element={<HomePage />} />
+          <Route path="/About" element={<AboutPage />} />
+          <Route path="/Login" element={<LoginPage />} />
+        </Routes>
+      </div>
     </div>
   );
 }

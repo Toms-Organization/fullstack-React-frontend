@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const LoginPage = () => {
+const Profile = () => {
   const user = useSelector((state) => state.user.value);
   return (
     <div>
@@ -13,4 +13,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Profile;
