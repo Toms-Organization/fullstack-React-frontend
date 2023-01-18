@@ -7,9 +7,3 @@ export const getData = async () => {
   console.log(stringData.data);
   return stringData.data;
 };
-
-/* export const getData = async (data) => {
-  const quizObject = await axios.get(baseurl, { params: data });
-  return quizObject.data.results;
-};
- */
