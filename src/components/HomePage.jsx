@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className=''>
       <h1 className="px-5 py-5 text-2xl font-plainheader underline">
         Headline
       </h1>

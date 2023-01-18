@@ -28,7 +28,7 @@ const LoginPage = () => {
         <p>Email: {user.email}</p>
       </div>
     </div>
-  );
+  ); 
 };
 
 export default LoginPage;
