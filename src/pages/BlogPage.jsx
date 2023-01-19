@@ -1,8 +1,9 @@
 import React from 'react';
 import { getData, getAllBlogPosts } from '../services/blogService';
 import { useState, useEffect } from 'react';
+import BlogPost from '../components/BlogPost';
 
-const AboutPage = () => {
+const BlogPage = () => {
   const [blogPosts, setblogPosts] = useState();
 
   useEffect(() => {
@@ -14,16 +15,14 @@ const AboutPage = () => {
   }, []);
 
   console.log(blogPosts);
+
   return (
     <div>
-      <h1>AboutPage</h1>
-      <div>
-        {blogPosts.map((blog, index) => (
-          <p key={blog.id}>{blog.topic}</p>
-        ))}
-      </div>
+      <h1>This is The BLOGPAGE!</h1>
+      <br />
+      {blogPosts && <BlogPost allBlogPosts={blogPosts} />}
     </div>
   );
 };
 
-export default AboutPage;
+export default BlogPage;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { getData, getAllBlogPosts } from '../services/blogService';
 import { useState, useEffect } from 'react';
-import BlogPost from './BlogPost';
+import BlogPost from '../components/BlogPost';
 
-const BlogPage = () => {
+const NewsPage = () => {
   const [blogPosts, setblogPosts] = useState();
 
   useEffect(() => {
@@ -18,11 +18,10 @@ const BlogPage = () => {
 
   return (
     <div>
-      <h1>This is The BLOGPAGE!</h1>
-      <br />
+      <h1>NewsPage.... note that this is template...</h1>
       {blogPosts && <BlogPost allBlogPosts={blogPosts} />}
     </div>
   );
 };
 
-export default BlogPage;
+export default NewsPage;

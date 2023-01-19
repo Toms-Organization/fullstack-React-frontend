@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { login, logout } from '../features/user';
 import { useSelector } from 'react-redux';
-import TestForm from './TestForm';
+import TestForm from '../components/TestForm';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ const LoginPage = () => {
         <p>Email: {user.email}</p>
       </div>
     </div>
-  ); 
+  );
 };
 
 export default LoginPage;
