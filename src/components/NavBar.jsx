@@ -29,8 +29,19 @@ const NavBar = () => {
       <Link to="/Login" className="LoginPage">
         Login/Logout
       </Link>
+
+      <div className="display: flex; flex-direction: column;">
+        <p>UserName:</p>
+        <p>placeholder:</p>
+        <p>placeholder:</p>
+      </div>
     </nav>
   );
 };
 
 export default NavBar;
+
+/* 
+ <Link to="/Login" className="LoginPage">
+   Login/Logout
+ </Link>; */

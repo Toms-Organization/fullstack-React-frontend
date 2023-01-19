@@ -18,7 +18,7 @@ const BlogPage = () => {
   console.log(blogPosts);
 
   return (
-    <div className="font-plainheader text-white bg-black ">
+    <div className="min-h-screen font-plainheader text-white bg-black">
       <h1 className=" flex justify-center text-6xl font-signature">
         This is the BlogPage!
       </h1>

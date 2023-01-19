@@ -9,11 +9,9 @@ const LoginPage = () => {
   const user = useSelector((state) => state.user.value);
 
   return (
-    <div>
-      <h1 className="flex justify-between items-center text-2xl">
-        This is LoginPage
-      </h1>
-
+    <div className=" min-h-screen px-5 py-5 text-2xl underline font-plainheader">
+      <h1>This is LoginPage</h1>
+      <br />
       <div>
         <TestForm />
       </div>

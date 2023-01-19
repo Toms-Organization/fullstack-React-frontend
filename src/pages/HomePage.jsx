@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomePage = () => {
   return (
-    <div className="">
+    <div className=" min-h-screen font-plainheader text-white bg-black">
       <h1 className="px-5 py-5 text-2xl font-plainheader underline">
         Home Page
       </h1>

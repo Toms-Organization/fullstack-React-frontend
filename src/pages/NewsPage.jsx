@@ -17,7 +17,7 @@ const NewsPage = () => {
   console.log(blogPosts); */
 
   return (
-    <div>
+    <div className=" min-h-screen px-5 py-5 text-2xl underline font-plainheader text-white bg-black">
       <h1>NewsPage</h1>
       <h3>
         This page will interact with another API getting news in the world
