@@ -1,7 +1,7 @@
 import React from 'react';
 import { getData, getAllBlogPosts } from '../services/blogService';
 import { useState, useEffect } from 'react';
-import CardTest from '../components/CardTest';
+import CardTest from '../components/BlogCard';
 
 const BlogPage = () => {
   const [blogPosts, setblogPosts] = useState();
