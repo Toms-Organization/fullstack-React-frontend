@@ -1,25 +1,26 @@
 import React from 'react';
-import { getData } from '../services/blogService';
+import { getData, getAllBlogPosts } from '../services/blogService';
 import { useState, useEffect } from 'react';
+import BlogPost from './BlogPost';
 
 const BlogPage = () => {
-  const [ActiveString, setActiveString] = useState();
+  const [blogPosts, setblogPosts] = useState();
 
   useEffect(() => {
     const getDataConst = async () => {
-      const temp = await getData();
-      setActiveString(temp);
+      const temp = await getAllBlogPosts();
+      setblogPosts(temp);
     };
     getDataConst();
   }, []);
 
-  //const myString = getData();
-  //console.log(myString);
+  console.log(blogPosts);
 
   return (
     <div>
-      <h1>BlogPage</h1>
-      <p>{ActiveString}</p>
+      <h1>This is The BLOGPAGE!</h1>
+      <br />
+      {blogPosts && <BlogPost allBlogPosts={blogPosts} />}
     </div>
   );
 };
