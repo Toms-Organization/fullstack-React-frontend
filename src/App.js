@@ -2,11 +2,11 @@ import './index.css';
 import './App.css';
 
 import NavBar from './components/NavBar';
-import HomePage from './components/HomePage';
-import AboutPage from './components/AboutPage';
-import LoginPage from './components/LoginPage';
-import NewsPage from './components/NewsPage';
-import BlogPage from './components/BlogPage';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import LoginPage from './pages/LoginPage';
+import NewsPage from './pages/NewsPage';
+import BlogPage from './pages/BlogPage';
 
 import { Route, Routes } from 'react-router-dom';
 
