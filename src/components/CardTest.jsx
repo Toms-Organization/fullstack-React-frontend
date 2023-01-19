@@ -1,6 +1,10 @@
 import React from 'react';
 
 const CardTest = ({ allBlogPosts }) => {
+  const parseDate = (date) => {
+    let newString = date.substring(0, 10);
+    return newString;
+  };
   return (
     <div className="px-5 py-5  text-2xl font-plainheader bg-black">
       <div class="rounded-lg shadow-lg flex justify-center p-6 mx-60 text-black bg-black px-2 py-2">
@@ -22,7 +26,7 @@ const CardTest = ({ allBlogPosts }) => {
                   Written by: {blogpost.byUser}
                 </h5>
                 <h5 class="text-gray-900 text-base font-medium mb-2 mx-7  flex justify-end">
-                  Date: {blogpost.createdAt}
+                  Date: {parseDate(blogpost.createdAt)}
                 </h5>
               </div>
             </div>
