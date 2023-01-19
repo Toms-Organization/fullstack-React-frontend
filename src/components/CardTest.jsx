@@ -17,11 +17,11 @@ const CardTest = ({ allBlogPosts }) => {
               <p class=" text-gray-900 font-plaintext text-base mb-8 italic mx-7">
                 {blogpost.text}
               </p>
-              <div class="flex ">
-                <h5 class="text-gray-900 text-base font-medium mb-2 mx-7">
+              <div class="flex justify-between">
+                <h5 class="text-gray-900 text-base font-medium mb-2 mx-7 flex justify-start">
                   Written by: {blogpost.byUser}
                 </h5>
-                <h5 class="text-gray-900 text-base font-medium mb-2 mx-7">
+                <h5 class="text-gray-900 text-base font-medium mb-2 mx-7  flex justify-end">
                   Date: {blogpost.createdAt}
                 </h5>
               </div>

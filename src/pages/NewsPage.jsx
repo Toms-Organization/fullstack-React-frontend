@@ -28,5 +28,3 @@ const NewsPage = () => {
 };
 
 export default NewsPage;
-
-// <FormLoginTest></FormLoginTest>;
