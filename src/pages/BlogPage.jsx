@@ -2,6 +2,7 @@ import React from 'react';
 import { getData, getAllBlogPosts } from '../services/blogService';
 import { useState, useEffect } from 'react';
 import BlogPost from '../components/BlogPost';
+import OneBlogPost from '../components/OneBlogPost';
 
 const BlogPage = () => {
   const [blogPosts, setblogPosts] = useState();
@@ -17,10 +18,12 @@ const BlogPage = () => {
   console.log(blogPosts);
 
   return (
-    <div>
-      <h1>This is The BLOGPAGE!</h1>
+    <div className="font-plainheader text-white bg-black ">
+      <h1 className=" flex justify-center text-6xl font-signature">
+        This is the BlogPage!
+      </h1>
       <br />
-      {blogPosts && <BlogPost allBlogPosts={blogPosts} />}
+      {blogPosts && <OneBlogPost allBlogPosts={blogPosts} />}
     </div>
   );
 };

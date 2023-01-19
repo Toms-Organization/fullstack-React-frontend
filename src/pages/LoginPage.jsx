@@ -15,7 +15,7 @@ const LoginPage = () => {
       </h1>
 
       <div>
-        <TestForm></TestForm>
+        <TestForm />
       </div>
 
       <div>
