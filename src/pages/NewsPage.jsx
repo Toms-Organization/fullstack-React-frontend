@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import BlogPost from '../components/BlogPost';
 
 const NewsPage = () => {
-  const [blogPosts, setblogPosts] = useState();
+  /*   const [blogPosts, setblogPosts] = useState();
 
   useEffect(() => {
     const getDataConst = async () => {
@@ -14,12 +14,16 @@ const NewsPage = () => {
     getDataConst();
   }, []);
 
-  console.log(blogPosts);
+  console.log(blogPosts); */
 
   return (
     <div>
-      <h1>NewsPage.... note that this is template...</h1>
-      {blogPosts && <BlogPost allBlogPosts={blogPosts} />}
+      <h1>NewsPage</h1>
+      <h3>
+        This page will interact with another API getting news in the world
+        fitting for me
+      </h3>
+      {/*  {blogPosts && <BlogPost allBlogPosts={blogPosts} />} */}
     </div>
   );
 };
