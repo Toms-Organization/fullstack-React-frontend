@@ -29,9 +29,17 @@ const NavBar = () => {
         Blog
       </Link>
 
-      <Link to="/Login" className="LoginPage">
-        Login/Logout
-      </Link>
+      {!loggedInUser.email && (
+        <Link to="/Login" className="LoginPage">
+          Login
+        </Link>
+      )}
+
+      {loggedInUser.email && (
+        <Link to="/Logout" className="LogoutPage">
+          Logout
+        </Link>
+      )}
 
       <div className="display: flex; flex-direction: column; text-base text-center">
         <p>Login User</p>
