@@ -25,9 +25,6 @@ const NewsPage = () => {
       <h1 className=" flex justify-center text-8xl font-signature p-8 ">
         This is the News Page!
       </h1>
-      <div>
-        <LoginCard></LoginCard>
-      </div>
     </div>
   );
 };

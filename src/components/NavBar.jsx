@@ -33,10 +33,9 @@ const NavBar = () => {
         Login/Logout
       </Link>
 
-      <div className="display: flex; flex-direction: column; text-base">
-        <p>UserName: {loggedInUser.name}</p>
-        <p>Reason: {loggedInUser.reason}</p>
-        <p>email: {loggedInUser.email}</p>
+      <div className="display: flex; flex-direction: column; text-base text-center">
+        <p>Login User</p>
+        <p> {loggedInUser.email}</p>
       </div>
     </nav>
   );
