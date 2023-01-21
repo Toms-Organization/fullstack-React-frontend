@@ -14,34 +14,13 @@ export const getAllBlogPosts = async () => {
   return responseData.data;
 };
 
-export const loginAndGetToken = async () => {
-  let dataToSend = [];
-  let response;
-  let testObject = {
-    id: '',
-    userName: '',
-    email: '',
-    token: '',
-  };
+export const loginToServer = async () => {
+  const loginUrl = 'http://localhost:8080/login';
+  const res = await axios.post(loginUrl, {
+    userName: 'newguy',
+    userPassword: 'newpassword',
+  });
 
-  var postData = {
-    userName: 'readguy',
-    userPassword: 'somepassword',
-  };
-  let axiosConfig = {
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    },
-  };
-  axios
-    .post('http://localhost:8080/login', postData, axiosConfig)
-    .then((response) => {
-      console.log('RESPONSE RECEIVED: ', response.data);
-    })
-    .catch((err) => {
-      console.log('AXIOS ERROR: ', err);
-    });
-
-  return dataToSend;
+  //console.log(res.data);
+  return res.data;
 };
