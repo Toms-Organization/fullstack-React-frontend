@@ -31,7 +31,7 @@ const LoginCard = () => {
     alert('Welcome to my page! Let me know what you think about it!');
   };
   return (
-    <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6 border">
+    <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
       <div className="  w-1/5">
         <form>
           <div className="mb-6">
@@ -76,12 +76,6 @@ const LoginCard = () => {
               className=" w-2/5  mx-3 inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             >
               Login
-            </button>
-            <button
-              className="w-2/5 mx-3 inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-              onClick={handleLogout}
-            >
-              LOGOUT
             </button>
             <div className="">
               <p className=" text-gray-300 text-sm font-semibold mt-2 pt-1 mb-0">
