@@ -22,13 +22,19 @@ const LoginCard = () => {
   };
 
   const handleLogin = (event) => {
+    // TODO: Implement a function to login if not 200 succcess print it...
+
     event.preventDefault();
     dispatch(
       login({
         email: inputs.email,
       })
     );
-    alert('Welcome to my page! Let me know what you think about it!');
+    alert(
+      'Welcome to my page ' +
+        inputs.email +
+        '! Let me know what you think about it!'
+    );
   };
   return (
     <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
@@ -64,8 +70,7 @@ const LoginCard = () => {
 
           <div className=" text-center  items-center mb-6">
             <a href="#!" className="text-gray-300">
-              Forgot password? lägga till en onlick? ta Email och skicka en
-              reset?
+              Forgot password?
             </a>
           </div>
 

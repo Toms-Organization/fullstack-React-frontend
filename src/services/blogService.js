@@ -24,3 +24,21 @@ export const loginToServer = async () => {
   //console.log(res.data);
   return res.data;
 };
+
+export const loginUser = async (login) => {
+  const loginUrl = 'http://localhost:8080/login';
+  const res = await axios.post(loginUrl, {
+    userName: 'newguy',
+    userPassword: 'newpassword',
+  });
+
+  return res;
+};
+
+export const loginUser2 = async (login) => {
+  const userLoginDto = await axios.post(
+    'http://localhost:8080/user/login',
+    login
+  );
+  return userLoginDto.data;
+};
