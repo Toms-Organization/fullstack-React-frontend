@@ -1,10 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { createUserAccount } from '../services/userService';
+import { useNavigate } from 'react-router-dom';
 
 const CreateUserCard = () => {
   const [inputs, setInputs] = useState({});
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -12,7 +15,21 @@ const CreateUserCard = () => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleCreate = (event) => {};
+  const handleCreate = (event) => {
+    event.preventDefault();
+    const returnFromCreateUser = async () => {
+      const reply = await createUserAccount(
+        inputs.userName,
+        inputs.passWord,
+        inputs.email
+      );
+    };
+    returnFromCreateUser();
+    alert('User was Created');
+    navigate('/Login');
+
+    // Write an if statement depending on the return value from the API
+  };
 
   return (
     <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
@@ -41,12 +58,11 @@ const CreateUserCard = () => {
               Enter your password:
             </label>
             <input
-              id="passWordInput"
+              id="passwordFormInput"
               name="passWord"
               type="password"
               value={inputs.passWord || ''}
               className="text-center form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="passwordFormInput"
               placeholder="Password"
               onChange={handleChange}
             />

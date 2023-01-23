@@ -4,10 +4,12 @@ import { loginUserAGAIN } from '../services/userService';
 import { useDispatch } from 'react-redux';
 import { loginUser, logoutUser } from '../features/login';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SimpleLoginForm = () => {
   const [inputs, setInputs] = useState({});
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -37,6 +39,7 @@ const SimpleLoginForm = () => {
         inputs.userName +
         '! Let me know what you think about it!'
     );
+    navigate('/');
   };
 
   return (
