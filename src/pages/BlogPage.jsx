@@ -1,7 +1,7 @@
 import React from 'react';
 import { getData, getAllBlogPosts } from '../services/blogService';
 import { useState, useEffect } from 'react';
-import CardTest from '../components/BlogCard';
+import BlogCard from '../components/BlogCard';
 
 const BlogPage = () => {
   const [blogPosts, setblogPosts] = useState();
@@ -21,7 +21,7 @@ const BlogPage = () => {
       <h1 className=" flex justify-center text-8xl font-signature p-8">
         This is the BlogPage!
       </h1>
-      {blogPosts && <CardTest allBlogPosts={blogPosts} />}
+      {blogPosts && <BlogCard allBlogPosts={blogPosts} />}
     </div>
   );
 };

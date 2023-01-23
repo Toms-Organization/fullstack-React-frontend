@@ -1,9 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { login, logout } from '../features/user';
 import { useSelector } from 'react-redux';
-import TestForm from '../components/TestForm';
-import LoginCard from '../components/LoginCard';
+
 import SimpleLoginForm from '../components/SimpleLoginForm';
 
 const LoginPage = () => {

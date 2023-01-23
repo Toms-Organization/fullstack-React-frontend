@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CardTest = ({ allBlogPosts }) => {
+const BlogCard = ({ allBlogPosts }) => {
   const parseDate = (date) => {
     let newString = date.substring(0, 10);
     return newString;
@@ -37,4 +37,4 @@ const CardTest = ({ allBlogPosts }) => {
   );
 };
 
-export default CardTest;
+export default BlogCard;
