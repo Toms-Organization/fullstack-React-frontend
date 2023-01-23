@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { loginUserAGAIN } from '../services/userService';
 import { useDispatch } from 'react-redux';
-import { login, logout } from '../features/user';
-import { useSelector } from 'react-redux';
-import { loginUser2 } from '../services/blogService';
+import { loginUser, logoutUser } from '../features/login';
 
-const LoginCard = () => {
+const SimpleLoginForm = () => {
   const [inputs, setInputs] = useState({});
   const dispatch = useDispatch();
 
@@ -16,17 +15,29 @@ const LoginCard = () => {
   };
   const handleLogin = (event) => {
     event.preventDefault();
-    dispatch(
-      login({
-        email: inputs.email,
-      })
-    );
+    const returnFromLogin = async () => {
+      const reply = await loginUserAGAIN(inputs.userName, inputs.passWord);
+      console.log('reply.data.id');
+      console.log(reply.data.id);
+      // set user details
+
+      dispatch(
+        loginUser({
+          id: reply.data.id,
+          userName: reply.data.userName,
+          email: reply.data.email,
+          token: reply.data.token,
+        })
+      );
+    };
+    returnFromLogin();
     alert(
       'Welcome to my page ' +
-        inputs.email +
+        inputs.userName +
         '! Let me know what you think about it!'
     );
   };
+
   return (
     <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
       <div className="  w-1/5 ">
@@ -36,8 +47,8 @@ const LoginCard = () => {
             <input
               id="emailFormInput"
               type="text"
-              name="email"
-              value={inputs.email || ''}
+              name="userName"
+              value={inputs.userName || ''}
               onChange={handleChange}
               className=" text-center form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="Email address"
@@ -49,9 +60,9 @@ const LoginCard = () => {
               Enter your password:
             </label>
             <input
-              name="password"
+              name="passWord"
               type="password"
-              value={inputs.password || ''}
+              value={inputs.passWord || ''}
               className="text-center form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               id="passwordFormInput"
               placeholder="Password"
@@ -91,4 +102,4 @@ const LoginCard = () => {
   );
 };
 
-export default LoginCard;
+export default SimpleLoginForm;

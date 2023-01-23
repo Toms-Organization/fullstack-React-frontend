@@ -2,16 +2,17 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login, logout } from '../features/user';
+import { loginUser, logoutUser } from '../features/login';
 import { useSelector } from 'react-redux';
 
 const LogoutCard = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.value);
+  const userLoggedIn = useSelector((state) => state.login.value);
 
   const handleLogout = (event) => {
     event.preventDefault();
-    alert('Goodbye ' + user.email);
-    dispatch(logout());
+    alert('Goodbye ' + userLoggedIn.userName);
+    dispatch(logoutUser());
   };
 
   return (

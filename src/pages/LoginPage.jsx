@@ -4,6 +4,7 @@ import { login, logout } from '../features/user';
 import { useSelector } from 'react-redux';
 import TestForm from '../components/TestForm';
 import LoginCard from '../components/LoginCard';
+import SimpleLoginForm from '../components/SimpleLoginForm';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const LoginPage = () => {
       </h1>
       <br />
       <div>
-        <LoginCard />
+        <SimpleLoginForm />
       </div>
     </div>
   );

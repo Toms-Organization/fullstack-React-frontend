@@ -1,24 +1,12 @@
 import React from 'react';
 import { loginToServer } from '../services/blogService';
 import { useState, useEffect } from 'react';
-import FormLoginTest from '../components/FormLoginTest';
-import LoginCard from '../components/LoginCard';
+import SimpleLoginForm from '../components/SimpleLoginForm';
+import TestForm from '../components/TestForm';
 
 const NewsPage = () => {
   // Note: This will not work cuz at first the data isnt fetched
   // which means u will get a error... SO write logic to check if data is here and then display
-
-  const [userData, setuserData] = useState();
-
-  useEffect(() => {
-    const getData = async () => {
-      const data = await loginToServer();
-      setuserData(data);
-    };
-    getData();
-  }, []);
-
-  console.log(userData);
 
   return (
     <div className="min-h-screen font-plainheader text-white bg-black text-base">
@@ -35,3 +23,5 @@ export default NewsPage;
       <p> userName: {userData.userName}</p>
       <p> userEmail: {userData.email}</p>
       <p> userToken: {userData.token}</p> */
+/*  <SimpleLoginForm></SimpleLoginForm> */
+//  <Login></Login>

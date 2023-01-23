@@ -7,11 +7,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import userReducer from './features/user';
 import { BrowserRouter } from 'react-router-dom';
+import loginReducer from './features/login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = configureStore({
   reducer: {
     user: userReducer,
+    login: loginReducer,
   },
 });
 
