@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage';
 import NewsPage from './pages/NewsPage';
 import BlogPage from './pages/BlogPage';
 import LogoutPage from './pages/LogoutPage';
+import CreateUser from './pages/CreateUser';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -18,7 +19,7 @@ function App() {
       <div>
         <Routes>
           <Route path="" element={<HomePage />} />
-
+          <Route path="/createUser" element={<CreateUser />} />
           <Route path="/About" element={<AboutPage />} />
           <Route path="/News" element={<NewsPage />} />
           <Route path="/Blog" element={<BlogPage />} />
