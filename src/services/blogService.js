@@ -13,3 +13,30 @@ export const getAllBlogPosts = async () => {
   //console.log(responseData.data);
   return responseData.data;
 };
+
+export const loginToServer = async () => {
+  const loginUrl = 'http://localhost:8080/login';
+  const res = await axios.post(loginUrl, {
+    userName: 'newguy',
+    userPassword: 'newpassword',
+  });
+
+  //console.log(res.data);
+  return res.data;
+};
+
+export const loginUser = async (login) => {
+  const loginUrl = 'http://localhost:8080/login';
+  const res = await axios.post(loginUrl, {
+    userName: login.userName,
+    userPassword: login.passWord,
+  });
+
+  return res;
+};
+
+export const loginUser2 = async (login) => {
+  const userLoginDto = await axios.post('http://localhost:8080/login', login);
+  console.log(userLoginDto);
+  return userLoginDto;
+};

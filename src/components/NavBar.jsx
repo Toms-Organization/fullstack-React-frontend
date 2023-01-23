@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const NavBar = () => {
+  // const loggedInUser = useSelector((state) => state.user.value);
+  const testUser = useSelector((state) => state.login.value);
+
   return (
     <nav className="flex justify-between items-center text-2xl w-full h-40 px-5 py-5 font-plainheader text-white bg-black">
       <Link to="" className="homePage">
@@ -26,14 +31,21 @@ const NavBar = () => {
         Blog
       </Link>
 
-      <Link to="/Login" className="LoginPage">
-        Login/Logout
-      </Link>
+      {!testUser.userName && (
+        <Link to="/Login" className="LoginPage">
+          Login
+        </Link>
+      )}
 
-      <div className="display: flex; flex-direction: column;">
-        <p>UserName:</p>
-        <p>placeholder:</p>
-        <p>placeholder:</p>
+      {testUser.userName && (
+        <Link to="/Logout" className="LogoutPage">
+          Logout
+        </Link>
+      )}
+
+      <div className="display: flex; flex-direction: column; text-base text-center">
+        <p>Current User</p>
+        <p> {testUser.userName}</p>
       </div>
     </nav>
   );

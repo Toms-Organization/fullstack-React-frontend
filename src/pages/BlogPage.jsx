@@ -1,8 +1,7 @@
 import React from 'react';
 import { getData, getAllBlogPosts } from '../services/blogService';
 import { useState, useEffect } from 'react';
-import BlogPost from '../components/BlogPost';
-import OneBlogPost from '../components/OneBlogPost';
+import CardTest from '../components/BlogCard';
 
 const BlogPage = () => {
   const [blogPosts, setblogPosts] = useState();
@@ -19,11 +18,10 @@ const BlogPage = () => {
 
   return (
     <div className="min-h-screen font-plainheader text-white bg-black">
-      <h1 className=" flex justify-center text-6xl font-signature">
+      <h1 className=" flex justify-center text-8xl font-signature p-8">
         This is the BlogPage!
       </h1>
-      <br />
-      {blogPosts && <OneBlogPost allBlogPosts={blogPosts} />}
+      {blogPosts && <CardTest allBlogPosts={blogPosts} />}
     </div>
   );
 };

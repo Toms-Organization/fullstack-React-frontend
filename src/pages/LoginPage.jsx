@@ -3,27 +3,21 @@ import { useDispatch } from 'react-redux';
 import { login, logout } from '../features/user';
 import { useSelector } from 'react-redux';
 import TestForm from '../components/TestForm';
+import LoginCard from '../components/LoginCard';
+import SimpleLoginForm from '../components/SimpleLoginForm';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
 
   return (
-    <div className=" min-h-screen px-5 py-5 text-2xl underline font-plainheader">
-      <h1>This is LoginPage</h1>
+    <div className="min-h-screen font-plainheader text-white bg-black text-base">
+      <h1 className=" flex justify-center text-8xl font-signature p-8 ">
+        This is LoginPage
+      </h1>
       <br />
       <div>
-        <TestForm />
-      </div>
-
-      <div>
-        <br />
-        <br />
-        <br />
-        <h1>Current Logged in is:</h1>
-        <p>Name: {user.name}</p>
-        <p>reason: {user.reason}</p>
-        <p>Email: {user.email}</p>
+        <SimpleLoginForm />
       </div>
     </div>
   );
