@@ -2,19 +2,10 @@ import React from 'react';
 
 const HomePage = () => {
   return (
-    <div className=" min-h-screen font-plainheader text-white bg-black">
-      <h1 className="px-5 py-5 text-2xl font-plainheader underline">
-        Home Page
+    <div className="min-h-screen font-plainheader text-white bg-black">
+      <h1 className=" flex justify-center text-8xl font-signature p-8">
+        This is the Home Page!
       </h1>
-      <p className="px-5 py-5 text-1xl font-plaintext">
-        This will welcome a user and contain information of why i built this
-        application.
-      </p>
-      <br />
-      <p className="px-5 py-5 text-1xl font-plaintext">
-        Probable som pictures and explenations of how this application works and
-        som pictures
-      </p>
     </div>
   );
 };

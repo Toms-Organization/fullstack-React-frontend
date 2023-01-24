@@ -4,15 +4,18 @@ import { useDispatch } from 'react-redux';
 import { login, logout } from '../features/user';
 import { loginUser, logoutUser } from '../features/login';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const LogoutCard = () => {
   const dispatch = useDispatch();
   const userLoggedIn = useSelector((state) => state.login.value);
+  let navigate = useNavigate();
 
   const handleLogout = (event) => {
     event.preventDefault();
     alert('Goodbye ' + userLoggedIn.userName);
     dispatch(logoutUser());
+    navigate('/');
   };
 
   return (

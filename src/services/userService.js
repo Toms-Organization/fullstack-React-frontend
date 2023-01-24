@@ -30,3 +30,12 @@ export const getUserInfo = async (userId, token) => {
   );
   return info.data;
 };
+
+export const createUserAccount = async (userName, userPassword, email) => {
+  const createResponse = await axios.post('http://localhost:8080/createuser', {
+    userName: userName,
+    userPassword: userPassword,
+    email: email,
+  });
+  return createResponse;
+};
