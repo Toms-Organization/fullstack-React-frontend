@@ -36,7 +36,7 @@ const BlogPage = () => {
         </Link>
       </div>
 
-      <body>{blogPosts && <BlogCard allBlogPosts={blogPosts} />}</body>
+      {blogPosts && <BlogCard allBlogPosts={blogPosts} />}
     </div>
   );
 };
