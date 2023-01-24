@@ -21,3 +21,25 @@ export const getUsersBlogPosts = async (userId, token) => {
 
   return responseData.data;
 };
+
+export const createNewBlogPost = async (
+  NameOfTopic,
+  NameOfText,
+  userId,
+  token
+) => {
+  config.headers.Authorization = `Bearer ${token}`;
+
+  const createBlogPostUrl = 'http://localhost:8081/createblogpost';
+  const responseData = await axios.post(
+    createBlogPostUrl,
+    {
+      topic: NameOfTopic,
+      text: NameOfText,
+      appUserId: userId,
+    },
+    config
+  );
+
+  return responseData.data;
+};

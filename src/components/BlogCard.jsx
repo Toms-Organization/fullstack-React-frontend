@@ -6,7 +6,7 @@ const BlogCard = ({ allBlogPosts }) => {
     return newString;
   };
   return (
-    <div className="px-5 py-5  text-2xl font-plainheader bg-black">
+    <div className=" px-5 py-5  text-2xl font-plainheader bg-black">
       <div className="rounded-lg shadow-lg flex justify-center p-6 mx-80 text-black bg-black px-2 py-2">
         <div className="p-6">
           {allBlogPosts.map((blogpost, index) => (

@@ -20,7 +20,6 @@ function App() {
       <div>
         <Routes>
           <Route path="" element={<HomePage />} />
-
           <Route path="/CreateBlogPostPage" element={<CreateBlogPostPage />} />
           <Route path="/createUser" element={<CreateUser />} />
           <Route path="/About" element={<AboutPage />} />
