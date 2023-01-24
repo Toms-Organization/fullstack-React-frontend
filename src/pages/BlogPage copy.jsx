@@ -1,20 +1,16 @@
 import React from 'react';
-import { getUsersBlogPosts, getAllBlogPosts } from '../services/blogService';
+import { getData, getAllBlogPosts } from '../services/blogService';
 import { useState, useEffect } from 'react';
 import BlogCard from '../components/BlogCard';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 const BlogPage = () => {
   const [blogPosts, setblogPosts] = useState();
-  const testUser = useSelector((state) => state.login.value);
 
   useEffect(() => {
     const getDataConst = async () => {
-      const temp = await getUsersBlogPosts(testUser.id, testUser.token);
+      const temp = await getAllBlogPosts();
       setblogPosts(temp);
-      console.log(testUser.id);
-      console.log(testUser.token);
     };
     getDataConst();
   }, []);
