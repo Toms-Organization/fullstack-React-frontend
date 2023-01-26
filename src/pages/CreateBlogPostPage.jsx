@@ -17,9 +17,9 @@ const CreateBlogPostPage = () => {
         </Link>
       </div>
 
-      <body className=" flex justify-center ">
+      <div className=" flex justify-center ">
         <CreateBlogPostCard></CreateBlogPostCard>
-      </body>
+      </div>
     </div>
   );
 };
