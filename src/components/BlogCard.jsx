@@ -6,19 +6,19 @@ const BlogCard = ({ allBlogPosts }) => {
     return newString;
   };
   return (
-    <div className=" px-5 py-5  text-2xl font-plainheader bg-black">
-      <div className="rounded-lg shadow-lg flex justify-center p-6 mx-80 text-black bg-black px-2 py-2">
-        <div className="p-6">
+    <div className=" px-5 py-5  text-2xl font-plainheader bg-black ">
+      <div className=" rounded-lg shadow-lg flex justify-center p-6 mx-80 text-black bg-black px-2 py-2">
+        <div className="object-contain  max-w-full p-20 mx-80">
           {allBlogPosts.map((blogpost, index) => (
             <div
               key={blogpost.id}
               className="bg-zinc-400 rounded-lg shadow-lg my-2 "
             >
               <br />
-              <h3 className="flex justify-center font-plaintext text-4xl font-bold mb-8">
+              <h3 className="flex justify-center  font-plaintext text-4xl font-bold mb-8">
                 {blogpost.topic}
               </h3>
-              <p className=" text-gray-900 font-plaintext text-base mb-8 italic mx-7">
+              <p className=" object-contain  text-gray-900  font-plaintext text-base mb-8 italic mx-7">
                 {blogpost.text}
               </p>
               <div className="flex justify-between">
