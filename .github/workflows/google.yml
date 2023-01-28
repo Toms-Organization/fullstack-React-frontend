@@ -11,9 +11,7 @@ jobs:
   build-and-push-gcr:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: fronendreact
       PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
-      GIT_TAG: latest
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -34,7 +32,7 @@ jobs:
           credentials_json: ${{ secrets.GCLOUD_SERVICE_KEY }}
 
       - name: Build Docker Image
-        run: docker build -t $IMAGE_NAME:latest .
+        run: docker build -t react-frontend:latest .
 
       - name: Configure Docker Client
         run: |-
@@ -42,5 +40,5 @@ jobs:
           gcloud auth configure-docker us-central1-docker.pkg.dev --quiet
       - name: Push Docker Image to Container Registry (GCR)
         run: |-
-          docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
-          docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+          docker tag react-frontend:latest gcr.io/$PROJECT_ID/react-frontend:latest
+          docker push gcr.io/$PROJECT_ID/react-frontend:latest
