@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: tomganemo1987/docker101tutorial:latest
+          tags: tomganemo1987/docker101tutorial:frontend-react
 
 
 
