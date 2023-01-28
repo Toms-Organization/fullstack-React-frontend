@@ -31,9 +31,7 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCLOUD_SERVICE_KEY }}
       - name: Build Docker Image
-        run: |-
-          echo ls
-          docker build -t frontend-react:latest ..
+        run: docker build -t tomganemo1987/docker101tutorial:frontend-react .
 
       - name: Configure Docker Client
         run: |-
