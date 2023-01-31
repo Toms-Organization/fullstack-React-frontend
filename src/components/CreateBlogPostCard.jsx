@@ -18,19 +18,25 @@ const CreateBlogPostCard = () => {
 
   const handleCreate = (event) => {
     event.preventDefault();
-    const returnFromCreateBlogPost = async () => {
-      const reply = await createNewBlogPost(
-        inputs.topic,
-        inputs.text,
-        loggedInUser.id,
-        loggedInUser.token
-      );
-    };
-    returnFromCreateBlogPost();
-    alert('BlogEntry Submitted');
-    navigate('/Blog');
 
-    // Write an if statement depending on the return value from the API
+    if (loggedInUser.userName == '') {
+      alert('Please Login in order to Submit a blog entry!');
+      navigate('/login');
+    }
+
+    if (loggedInUser.userName != '') {
+      const returnFromCreateBlogPost = async () => {
+        const reply = await createNewBlogPost(
+          inputs.topic,
+          inputs.text,
+          loggedInUser.id,
+          loggedInUser.token
+        );
+      };
+      returnFromCreateBlogPost();
+      alert('BlogEntry Submitted');
+      navigate('/Blog');
+    }
   };
 
   return (

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 const NavBar = () => {
   // const loggedInUser = useSelector((state) => state.user.value);
-  const testUser = useSelector((state) => state.login.value);
+  const LoggedInUser = useSelector((state) => state.login.value);
 
   return (
     <nav className="flex justify-between items-center text-2xl w-full h-40 px-5 py-5 font-plainheader text-white bg-black">
@@ -31,13 +31,13 @@ const NavBar = () => {
         Blog
       </Link>
 
-      {!testUser.userName && (
+      {!LoggedInUser.userName && (
         <Link to="/Login" className="LoginPage">
           Login
         </Link>
       )}
 
-      {testUser.userName && (
+      {LoggedInUser.userName && (
         <Link to="/Logout" className="LogoutPage">
           Logout
         </Link>
@@ -45,7 +45,7 @@ const NavBar = () => {
 
       <div className="display: flex; flex-direction: column; text-base text-center">
         <p>Current User</p>
-        <p> {testUser.userName}</p>
+        <p> {LoggedInUser.userName}</p>
       </div>
     </nav>
   );
