@@ -16,6 +16,10 @@ const CreateBlogPostCard = () => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
+  function isBlank(str) {
+    return !str || str.trim().length === 0;
+  }
+
   const handleCreate = (event) => {
     event.preventDefault();
 
@@ -24,7 +28,11 @@ const CreateBlogPostCard = () => {
       navigate('/login');
     }
 
-    if (loggedInUser.userName != '') {
+    if (
+      loggedInUser.userName != '' &&
+      !isBlank(inputs.topic) &&
+      !isBlank(inputs.text)
+    ) {
       const returnFromCreateBlogPost = async () => {
         const reply = await createNewBlogPost(
           inputs.topic,
@@ -32,10 +40,14 @@ const CreateBlogPostCard = () => {
           loggedInUser.id,
           loggedInUser.token
         );
+        console.log(reply);
+        alert(reply);
       };
       returnFromCreateBlogPost();
-      alert('BlogEntry Submitted');
       navigate('/Blog');
+    }
+    if (isBlank(inputs.text) || isBlank(inputs.topic)) {
+      alert('topic/text is empy or null');
     }
   };
 
