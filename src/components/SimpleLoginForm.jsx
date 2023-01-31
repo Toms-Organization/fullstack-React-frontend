@@ -20,26 +20,30 @@ const SimpleLoginForm = () => {
     event.preventDefault();
     const returnFromLogin = async () => {
       const reply = await loginUserAGAIN(inputs.userName, inputs.passWord);
-      console.log('reply.data');
-      console.log(reply.data);
-      // set user details
 
-      dispatch(
-        loginUser({
-          id: reply.data.id,
-          userName: reply.data.userName,
-          email: reply.data.email,
-          token: reply.data.token,
-        })
-      );
+      // console.log(reply.data);
+
+      if (reply.data.token == null) {
+        alert('Login Failed! Please check username and password!');
+      }
+      if (reply.data.token != null) {
+        dispatch(
+          loginUser({
+            id: reply.data.id,
+            userName: reply.data.userName,
+            email: reply.data.email,
+            token: reply.data.token,
+          })
+        );
+        alert(
+          'Login Successful! \nWelcome to my page ' +
+            inputs.userName +
+            '! \nLet me know what you think about it!'
+        );
+        navigate('/');
+      }
     };
     returnFromLogin();
-    alert(
-      'Welcome to my page ' +
-        inputs.userName +
-        '! Let me know what you think about it!'
-    );
-    navigate('/');
   };
 
   return (
