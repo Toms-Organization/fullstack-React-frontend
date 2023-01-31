@@ -48,11 +48,13 @@ const CreateBlogPostCard = () => {
         <form>
           <div className="mb-6  ">
             <label className=" px-5 py-5 text-1xl font-plainheader">
-              Enter Topic:
+              Enter Topic (max 40 characters):
             </label>
             <input
               className="flex xl:justify-center form-control  w-1/3 px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               id="topicInput"
+              minLength={1}
+              maxLength={40}
               type="text"
               name="topic"
               value={inputs.topic || ''}
@@ -63,10 +65,12 @@ const CreateBlogPostCard = () => {
 
           <div className="mb-6 ">
             <label className="px-5 py-5 text-1xl font-plainheader">
-              Enter your text:
+              Enter your text (max 1000 characters):
             </label>
             <textarea
               id="textFormInput"
+              minLength={1}
+              maxLength={999}
               name="text"
               type="text"
               rows={8}
