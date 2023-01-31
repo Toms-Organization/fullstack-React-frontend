@@ -11,15 +11,17 @@ const BlogPage = () => {
 
   useEffect(() => {
     const getDataConst = async () => {
-      const temp = await getUsersBlogPosts(testUser.id, testUser.token);
-      setblogPosts(temp);
-      console.log(testUser.id);
-      console.log(testUser.token);
+      if (testUser.userName != '') {
+        const temp = await getUsersBlogPosts(testUser.id, testUser.token);
+        setblogPosts(temp);
+        // console.log(testUser.id);
+        // console.log(testUser.token);
+      }
     };
     getDataConst();
   }, []);
 
-  console.log(blogPosts);
+  // console.log('Testing ' + blogPosts);
 
   return (
     <div className="min-h-screen font-plainheader text-white bg-black">

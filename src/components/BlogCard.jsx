@@ -7,8 +7,8 @@ const BlogCard = ({ allBlogPosts }) => {
   };
   return (
     <div className=" px-5 py-5  text-2xl font-plainheader bg-black ">
-      <div className=" rounded-lg shadow-lg flex justify-center p-6 mx-80 text-black bg-black px-2 py-2">
-        <div className="object-contain  max-w-full p-20 mx-80">
+      <div className=" rounded-lg shadow-lg flex justify-center p-6 mx-80 text-black bg-black px-2 py-2 ">
+        <div className="object-contain  max-w-full p-20 mx-50 min-w-[90%]">
           {allBlogPosts.map((blogpost, index) => (
             <div
               key={blogpost.id}

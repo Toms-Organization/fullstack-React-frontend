@@ -23,10 +23,19 @@ const CreateUserCard = () => {
         inputs.passWord,
         inputs.email
       );
+      console.log(reply.data);
+      console.log(reply.headers);
+      console.log(reply.status);
+      if (reply.data === 'UserName already exists') {
+        alert(reply.data);
+      }
+      if (reply.data === 'User was successfully created') {
+        alert('User was Created');
+        navigate('/Login');
+      }
     };
     returnFromCreateUser();
-    alert('User was Created');
-    navigate('/Login');
+    //navigate('/Login');
 
     // Write an if statement depending on the return value from the API
   };
