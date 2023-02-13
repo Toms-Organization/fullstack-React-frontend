@@ -9,7 +9,6 @@ let config = {
 export const getAllBlogPosts = async () => {
   const blogUrl = 'http://localhost:8081/opentemporary';
   const responseData = await axios.get(blogUrl);
-  //console.log(responseData.data);
   return responseData.data;
 };
 
